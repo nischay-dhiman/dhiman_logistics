@@ -1,0 +1,22 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="content" style="display: flex; flex-wrap: wrap;">
+    <div class="content_heading">
+      <h1>Editing Inventory Item</h1>
+    </div>
+
+    <div class="custom_actions">
+      <a href=<%= inventory_items_path %> ><img src=<%= asset_path("back.png") %> alt="Logo" width="40"></a>
+    </div>
+    <div class="custom_actions">
+      <%= link_to @inventory_item do %>
+        <img src=<%= asset_path("eye.png") %> alt="Logo" width="40" />
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "form", inventory_item: @inventory_item %>
+  
+</div>
+

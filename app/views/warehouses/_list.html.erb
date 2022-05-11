@@ -1,0 +1,40 @@
+<%- if warehouses.blank? %>
+  <p style="text-align: center">
+    No Warehouses Found, Create one
+  </p>
+<% else %>
+  <div style='overflow-x:auto;'>
+  <table>
+    <tr>
+      <th>Total Stock</th>
+      <th>City</th>
+      <th>Zipcode</th>
+      <th>Contact Number</th>
+      <th colspan=4 style="text-align: center">Actions</th>
+    </tr>
+    <% warehouses.each do |warehouse| %>
+      <tr>
+        <td><%= warehouse.total_stock %></td>
+        <td><%= warehouse.city %></td>
+        <td><%= warehouse.zipcode %></td>
+        <td><%= warehouse.contact_number %></td>
+        <td>
+          <%= link_to 'Show', warehouse %>
+        </td>
+
+        <td>
+          <%= link_to 'Edit', edit_warehouse_path(warehouse) %>
+        </td>
+
+        <td>
+          <%= button_to 'Delete', warehouse, method: :delete, class: 'delete_button' %>
+        </td>
+
+        <td>
+          <%= link_to 'Inventory', inventory_items_path(warehouse_id: warehouse.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>

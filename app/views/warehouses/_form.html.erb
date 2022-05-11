@@ -1,0 +1,41 @@
+<%= form_with(model: warehouse) do |form| %>
+  <% if warehouse.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(warehouse.errors.count, "error") %> prohibited this warehouse from being saved:</h2>
+
+      <ul>
+        <% warehouse.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th><%= form.label :address, style: "display: block" %></th>
+        <td><%= form.text_area :address %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :city, style: "display: block" %></th>
+        <td>
+          <%= form.select :city, options_for_select(CITIES) %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= form.label :zipcode, style: "display: block" %></th>
+        <td><%= form.text_field :zipcode %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :contact_number, style: "display: block" %></th>
+        <td><%= form.text_field :contact_number %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="submit_button">
+    <%= form.submit %>
+  </div>
+<% end %>

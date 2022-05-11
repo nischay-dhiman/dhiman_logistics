@@ -1,0 +1,18 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+
+  <div class="content" style="display: flex;flex-wrap: wrap;">
+    <div class="content_heading">
+      <h1>Inventory items</h1>
+    </div>
+    <div class="custom_actions">
+      <a href=<%= new_inventory_item_path(warehouse_id: params[:warehouse_id]) %> ><img src=<%= asset_path("add.png") %> alt="Logo" width="50"></a>
+    </div>
+  </div>
+
+
+  <%= render partial: "list", locals: {inventory_items: @inventory_items}%>
+
+  
+</div>

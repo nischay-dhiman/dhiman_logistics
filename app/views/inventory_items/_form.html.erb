@@ -1,0 +1,51 @@
+<%= form_with(model: inventory_item) do |form| %>
+  <% if inventory_item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(inventory_item.errors.count, "error") %> prohibited this Inventory item from being saved:</h2>
+
+      <ul>
+        <% inventory_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th><%= form.label :warehouse_id, style: "display: block" %></th>
+        <td><%= form.select(:warehouse_id, warehouses_for_select, :prompt => 'Select') %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :status, style: "display: block" %></th>
+        <td>
+          <%= form.select :status, options_for_select(INVENTORY_STATUSES) %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= form.label :item_code, style: "display: block" %></th>
+        <td><%= form.text_field :item_code %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :price, style: "display: block" %></th>
+        <td><%= form.text_field :price %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :price_per_unit, style: "display: block" %></th>
+        <td><%= form.text_field :price_per_unit %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :quantity, style: "display: block" %></th>
+        <td><%= form.number_field :quantity %></td>
+      </tr>
+      <tr>
+        <th><%= form.label :weight, style: "display: block" %></th>
+        <td><%= form.number_field :weight %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="submit_button">
+    <%= form.submit %>
+  </div>
+<% end %>

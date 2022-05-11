@@ -1,0 +1,58 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="content" style="display: flex; flex-wrap: wrap;">
+    <div class="content_heading">
+      <h1>Warehouse Info</h1>
+    </div>
+
+    <div class="custom_actions">
+      <a href=<%= warehouses_path %> ><img src=<%= asset_path("back.png") %> alt="Logo" width="40"></a>
+    </div>
+    <div class="custom_actions">
+      <a href=<%= edit_warehouse_path(@warehouse) %> ><img src=<%= asset_path("edit.png") %> alt="Logo" width="40"></a>
+    </div>
+    <div class="custom_actions">
+      <%= button_to @warehouse, method: :delete, class: "delete_button" do %>
+        <img src=<%= asset_path("delete.png") %> alt="Logo" width="40">
+      <% end %>
+    </div>
+  </div>
+
+
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Total Stock</th>
+        <td><%= @warehouse.total_stock %></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td><%= @warehouse.city %></td>
+      </tr>
+      <tr>
+        <th>Zipcode</th>
+        <td><%= @warehouse.zipcode %></td>
+      </tr>
+      <tr>
+        <th>Contact Number</th>
+        <td><%= @warehouse.contact_number %></td>
+      </tr>
+    </table>
+  </div>
+
+  &nbsp
+
+  <div class="content" style="display: flex;flex-wrap: wrap;">
+    <div class="content_heading">
+      <h1>Warehouse Inventory</h1>
+    </div>
+    <div class="custom_actions">
+      <a href=<%= new_inventory_item_path(warehouse_id: @warehouse.id) %> ><img src=<%= asset_path("add.png") %> alt="Logo" width="40"></a>
+    </div>
+  </div>
+
+
+  <%= render partial: "inventory_items/list", locals: {inventory_items: @warehouse_inventory}%>
+
+</div>

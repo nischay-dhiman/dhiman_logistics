@@ -1,0 +1,57 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <div class="content" style="display: flex; flex-wrap: wrap;">
+    <div class="content_heading">
+      <h1>Inventory Item Info</h1>
+    </div>
+
+    <div class="custom_actions">
+      <a href=<%= inventory_items_path %> ><img src=<%= asset_path("back.png") %> alt="Logo" width="40"></a>
+    </div>
+    <div class="custom_actions">
+      <a href=<%= edit_inventory_item_path(@inventory_item) %> ><img src=<%= asset_path("edit.png") %> alt="Logo" width="40"></a>
+    </div>
+    <div class="custom_actions">
+      <%= button_to @inventory_item, method: :delete, class: "delete_button" do %>
+        <img src=<%= asset_path("delete.png") %> alt="Logo" width="40">
+      <% end %>
+    </div>
+  </div>
+
+
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Warehouse</th>
+        <td><%= link_to @inventory_item.warehouse.info, @inventory_item.warehouse %></td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td><%= @inventory_item.status %></td>
+      </tr>
+      <tr>
+        <th>Item code</th>
+        <td><%= @inventory_item.item_code %></td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td><%= @inventory_item.price %></td>
+      </tr>
+      <tr>
+        <th>Price per unit</th>
+        <td><%= @inventory_item.price_per_unit %></td>
+      </tr>
+      <tr>
+        <th>Quantity</th>
+        <td><%= @inventory_item.quantity %></td>
+      </tr>
+      <tr>
+        <th>Weight</th>
+        <td><%= @inventory_item.weight %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
