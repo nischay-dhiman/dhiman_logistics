@@ -8,8 +8,15 @@ class InventoryItem < ApplicationRecord
   after_destroy :delete_warehouse_stocks
 
   # Validations
-  validates_presence_of :price, :quantity, :status, :item_code
+  validates_presence_of :quantity, :status, :item_code
   validates_uniqueness_of :item_code
+
+  validates :price, :presence => true,
+            :numericality => true
+
+  validates :price_per_unit, 
+            :numericality => true,
+            :allow_nil => true
 
   scope :in_warehouse, ->(warehouse_id) { where(warehouse_id: warehouse_id) if warehouse_id.present? }
 
