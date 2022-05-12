@@ -26,7 +26,7 @@ class WarehousesController < ApplicationController
 
     respond_to do |format|
       if @warehouse.save
-        format.html { redirect_to warehouse_url(@warehouse), notice: "Warehouse was successfully created." }
+        format.html { redirect_to warehouse_url(@warehouse), notice: I18n.t('warehouse.successfully_created') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -37,7 +37,7 @@ class WarehousesController < ApplicationController
   def update
     respond_to do |format|
       if @warehouse.update(warehouse_params)
-        format.html { redirect_to warehouse_url(@warehouse), notice: "Warehouse was successfully updated." }
+        format.html { redirect_to warehouse_url(@warehouse), notice: I18n.t('warehouse.successfully_updated') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -49,7 +49,7 @@ class WarehousesController < ApplicationController
     @warehouse.destroy
 
     respond_to do |format|
-      format.html { redirect_to warehouses_url, notice: "Warehouse was successfully destroyed." }
+      format.html { redirect_to warehouses_url, notice: I18n.t('warehouse.successfully_destroyed') }
     end
   end
 

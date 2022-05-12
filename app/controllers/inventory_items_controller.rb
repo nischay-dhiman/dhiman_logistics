@@ -25,7 +25,7 @@ class InventoryItemsController < ApplicationController
 
     respond_to do |format|
       if @inventory_item.save
-        format.html { redirect_to inventory_item_url(@inventory_item), notice: "Inventory item was successfully created." }
+        format.html { redirect_to inventory_item_url(@inventory_item), notice: I18n.t('inventory_items.successfully_created') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -36,7 +36,7 @@ class InventoryItemsController < ApplicationController
   def update
     respond_to do |format|
       if @inventory_item.update(inventory_item_params)
-        format.html { redirect_to inventory_item_url(@inventory_item), notice: "Inventory item was successfully updated." }
+        format.html { redirect_to inventory_item_url(@inventory_item), notice: I18n.t('inventory_items.successfully_updated') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class InventoryItemsController < ApplicationController
     @inventory_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to inventory_items_url, notice: "Inventory item was successfully destroyed." }
+      format.html { redirect_to inventory_items_url, notice: I18n.t('inventory_items.successfully_destroyed') }
     end
   end
 

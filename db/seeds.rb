@@ -10,15 +10,15 @@ warehouses = Warehouse.create(
   [
     { 
       city: 'Windsor',
-      zipcode: 'N9B 2N6',
+      zipcode: 'N9B2N6',
       address: '779 Partington Ave',
-      contact_number: '+12269754175' 
+      contact_number: '2269754175' 
     },
     { 
       city: 'Brampton',
-      zipcode: 'NY7 65H',
+      zipcode: 'NY765H',
       address: 'Hamilton Towers',
-      contact_number: '+19417840075' 
+      contact_number: '9417840075' 
     }
   ]
 )

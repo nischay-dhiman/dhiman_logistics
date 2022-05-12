@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+  inventory_items:
+    successfully_created: "Inventory item was successfully created."
+    successfully_updated: "Inventory item was successfully updated."
+    successfully_destroyed: "Inventory item was successfully destroyed."
+
+  warehouse:
+    successfully_created: "Warehouse was successfully created."
+    successfully_updated: "Warehouse was successfully updated."
+    successfully_destroyed: "Warehouse was successfully destroyed."
+
