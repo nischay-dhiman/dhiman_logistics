@@ -42,7 +42,7 @@ The Project mainly contains two modules
     - Contains count of total inventory items present in warehouse
 - Inventory Items
     - Contains Item information
-    - Contains warehouse information, where is is stored
+    - Contains warehouse information, where it is stored
     - Contains status of inventory item: (Received, Off-Loaded, Ready to Ship)
 
 #### DB architecture:
