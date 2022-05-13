@@ -192,6 +192,9 @@ We should see something like this in the browser:
 ![image logo](assets/local-setup.png)
 
 ## Running Testcases
+
+Added around 26 test cases majorly covering model level validations, callbacks
+
 ```sh
 bundle exec rspec
 ```
