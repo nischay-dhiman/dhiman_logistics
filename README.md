@@ -5,6 +5,7 @@ Dhiman Logistics is a cloud-based logistics tracker system.
 
 - [Requirements](#requirements)
 - [Additional Features](#additional-features)
+- [Project Architecture](#project-architecture) 
 - [Working Demo](#wokring-demo)
 - [Tech Stack](#tech-stack)
 - [Replit Quick Setup](#replit-quick-setup)
@@ -21,7 +22,6 @@ Dhiman Logistics is a cloud-based logistics tracker system.
     - [Database setup](#local-machine-setup)
     - [Running the Rails server on local machine](local-machine-setup)
 - [Running Testcases](#running-testcases)
-- [Project Architecture](#project-architecture)
 - [Future Scope](#future-scope)
 
 ## Requirements
@@ -33,6 +33,25 @@ Dhiman Logistics is a cloud-based logistics tracker system.
 ## Additional Feature
 - Ability to create warehouses/locations and assign inventory to specific locations
 
+
+## Project Architecture
+
+The Project mainly contains two modules
+- Warehouses
+    - Contains warehouse address and contact information
+    - Contains count of total inventory items present in warehouse
+- Inventory Items
+    - Contains Item information
+    - Contains warehouse information, where is is stored
+    - Contains status of inventory item: (Received, Off-Loaded, Ready to Ship)
+
+#### DB architecture:
+![db_diagram](assets/db-diagram.png)
+    
+#### Associations:
+- A warehouse can have multiple Inventory Items
+- Inventory Item belongs to a warehouse 
+
 ## Working Demo
 ![project_working](assets/complete-flow-2.gif)
 
@@ -40,7 +59,7 @@ Dhiman Logistics is a cloud-based logistics tracker system.
 
 Important libraries and frameworks used in this project:
 
-- [Ruby](https://github.com/ruby/ruby) - _2.7.2_, Interpreted object-oriented programming language
+- [Ruby](https://github.com/ruby/ruby) - _3.0.3_, Interpreted object-oriented programming language
 - [Rails](https://github.com/rails/rails) - _7.0.3_, Web-application framework based on [MVC](https://en.wikipedia.org/wiki/Model-view-controller) pattern
 - [SQLite](https://www.sqlite.org/index.html) - _1.4.2_, In-built Light Weight Database
 - [rspec-rails](https://github.com/rspec/rspec-rails/tree/6-0-maintenance) - _5.1.2_, Testing Framework, alternative to Minitest.
@@ -176,24 +195,6 @@ We should see something like this in the browser:
 ```sh
 bundle exec rspec
 ```
-
-## Project Architecture
-
-The Project mainly contains two modules
-- Warehouses
-    - Contains warehouse address and contact information
-    - Contains count of total inventory items present in warehouse
-- Inventory Items
-    - Contains Item information
-    - Contains warehouse information, where is is stored
-    - Contains status of inventory item: (Received, Off-Loaded, Ready to Ship)
-
-#### DB architecture:
-- screenshot for db
-    
-#### Associations:
-- A warehouse can have multiple Inventory Items
-- Inventory Item belongs to a warehouse 
   
 ## Future Scope  
 - Add Authentication
