@@ -46,7 +46,7 @@ The Project mainly contains two modules
     - Contains status of inventory item: (Received, Off-Loaded, Ready to Ship)
 
 #### DB architecture:
-<img src="assets/db-diagram.png" alt="drawing" width="300"/>
+<img src="assets/db-diagram.png" alt="drawing" width="500"/>
     
 #### Associations:
 - A warehouse can have multiple Inventory Items
