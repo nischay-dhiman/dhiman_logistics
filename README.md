@@ -3,22 +3,28 @@
 
 Dhiman Logistics is a cloud-based logistics tracker system.
 
-- [Features](#features)
+- [Requirements](#requirements)
 - [Additional Features](#additional-features)
+- [Working Demo](#wokring-demo)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
-    - [The Store](#the-store)
-    - [Technologies Used](#technologies-used)
-- [Project Setup](#project-setup)
-    - [Cloning the repository](#project-setup)
-    - [Installing libraries](#project-setup)
-    - [Database setup](#project-setup)
-    - [Running the Rails server on local machine](#project-setup)
-- [Run on Replit](#run-on-replit)
+- [Replit Quick Setup](#replit-quick-setup)
+    - [Import github Repository](#replit-quick-setup)
+    - [Installing libraries](#replit-quick-setup)
+    - [Database setup](#replit-quick-setup)
+    - [Running the Rails server on Replit](#replit-quick-setup)
+- [Local Machine Setup](#local-machine-setup)
+    - [Ruby install](#local-machine-setup)
+    - [Rails install](#local-machine-setup)
+    - [SQLite3 install](#local-machine-setup)
+    - [Cloning the repository](#local-machine-setup)
+    - [Installing libraries](#local-machine-setup)
+    - [Database setup](#local-machine-setup)
+    - [Running the Rails server on local machine](local-machine-setup)
 - [Running Testcases](#running-testcases)
 - [Project Architecture](#project-architecture)
+- [Future Scope](#future-scope)
 
-## Features
+## Requirements
 - Create inventory items
 - Edit inventory item
 - Delete inventory item
@@ -26,6 +32,9 @@ Dhiman Logistics is a cloud-based logistics tracker system.
 
 ## Additional Feature
 - Ability to create warehouses/locations and assign inventory to specific locations
+
+## Working Demo
+![project_working](assets/complete-flow-2.gif)
 
 ## Tech Stack
 
@@ -37,7 +46,63 @@ Important libraries and frameworks used in this project:
 - [rspec-rails](https://github.com/rspec/rspec-rails/tree/6-0-maintenance) - _5.1.2_, Testing Framework, alternative to Minitest.
 - [puma](https://github.com/puma/puma) - _5.6.4_, HTTP server for Ruby/Rack applications
 
-## Installation
+
+## Replit Quick Setup
+
+![image logo](assets/replit-flow-2.gif)
+
+### Step 1:
+
+Import the repository in replit
+
+https://github.com/nischay-dhiman/dhiman_logistics
+
+### Step 2:
+
+In shell section of replit, run following command
+
+```sh
+bundle
+```
+
+### Step 3:
+
+Creating the Database defined in database.yml for developement and test environments
+
+```sh
+rails db:create
+```
+
+### Step 4:
+
+Migrating the tables
+
+```sh
+rails db:migrate
+```
+
+### Step 5:
+
+Seed the warehouse table with two warehouses
+
+```sh
+rails db:seed
+```
+
+### Step 6:
+
+Run the rails server with binding on 0.0.0.0 for replit
+
+```sh
+rails s -b 0.0.0.0
+```
+
+After this, we can check on the replit preview window for demo.
+or check this url:
+[https://dhimanlogistics.nischaydhiman.repl.co/](https://dhimanlogistics.nischaydhiman.repl.co/)
+
+
+## Local Machine Setup
 
 ### Step 1:
 ##### Ruby Installation
@@ -72,21 +137,21 @@ rails --version
 Kindly follow the official Rails installation documentation in case of any issues:
 [https://guides.rubyonrails.org/v5.0/getting_started.html](https://guides.rubyonrails.org/v5.0/getting_started.html)
 
-## Project Setup
-### Step 1:
+
+### Step 4:
 Cloning the repository:
 ```sh
-git clone %Project-Github%
+git clone https://github.com/nischay-dhiman/dhiman_logistics.git
 cd dhiman_logistics
 ```
 
-### Step 2:
+### Step 5:
 Installing all the gems libraries and dependencies
 ```sh
 bundle
 ```
 
-### Step 3:
+### Step 6:
 Creating the database and migrating for the first time
 ```sh
 rake db:create
@@ -94,7 +159,7 @@ rake db:migrate
 rake db:seed
 ```
 
-### Step 4:
+### Step 7:
 Running the Rails server on local
 ```sh
 rails s
@@ -103,17 +168,9 @@ We can check website on our local machine browser:
 ```
 http://localhost:3000/
 ```
-We should see something like this:
-# Screenshot
+We should see something like this in the browser:
 
-
-## Run on Replit
-```sh
-rails s -b 0.0.0.0
-```
-After this check on the replit preview window for demo.
-
-- Add a screenshot of gif of application
+![image logo](assets/local-setup.png)
 
 ## Running Testcases
 ```sh
